@@ -23,14 +23,11 @@ resource "google_iam_workload_identity_pool_provider" "circleci" {
   }
 }
 
-
-
 resource "google_service_account" "circleci" {
   count        = var.existing_service_account_name == "" ? 1 : 0
   account_id   = lower("${var.resource_prefix}-oidc-acct")
   display_name = "${var.resource_prefix} Pipeline User"
 }
-
 
 resource "google_service_account_iam_binding" "circleci" {
   service_account_id = var.existing_service_account_name == "" ? google_service_account.circleci[0].name : var.existing_service_account_name

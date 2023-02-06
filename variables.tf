@@ -2,7 +2,6 @@
 # REQUIRED VARS
 #-------------------------------------------------------------------------------
 
-
 variable "circleci_org_id" {
   type        = string
   description = "Your CircleCI org ID.  Can be found under \"Organization Settings\" in the CircleCI application."
@@ -11,7 +10,6 @@ variable "circleci_org_id" {
 #-------------------------------------------------------------------------------
 # OPTIONAL VARS
 #-------------------------------------------------------------------------------
-
 
 variable "resource_prefix" {
   type        = string
