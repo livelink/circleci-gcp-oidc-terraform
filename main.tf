@@ -25,7 +25,7 @@ resource "google_iam_workload_identity_pool_provider" "circleci" {
 
 resource "google_service_account" "circleci" {
   count        = var.existing_service_account_name == "" ? 1 : 0
-  account_id   = lower("${var.resource_prefix}-oidc-acct")
+  account_id   = coalesce(var.service_account_name, lower("${var.resource_prefix}-oidc-acct"))
   display_name = "${var.resource_prefix} Pipeline User"
 }
 

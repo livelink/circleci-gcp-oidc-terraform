@@ -1,4 +1,5 @@
 # circleci-gcp-oidc-terraform
+
 Terraform plan to deploy GCP infra necessary for authenticating with GCP using CircleCI OIDC tokens.  Creates a workload identity pool, a workload identity pool provider, a service account to impersonate, and binds necessary permissions to the new service account.
 
 ## Requirements
@@ -47,6 +48,7 @@ Terraform plan to deploy GCP infra necessary for authenticating with GCP using C
 |------|---------|------------|
 |resource_prefix|`CircleCI`|Resource prefix added to all resources created by this plan.|
 |existing_service_account_name|||
+|ervice_account_name|||
 |custom_attribute_mappings|||
 |sa_impersonation_filter_attribute|||
 |sa_impersonation_filter_value|||
